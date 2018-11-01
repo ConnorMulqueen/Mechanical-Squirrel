@@ -12,6 +12,6 @@ A Discord bot that posts World of Warcraft: Classic memes.
   * Type '<b>#nochanges</b>' in any text channel the bot is in, it will respond with a meme pulled from <i>www.reddit.com/r/classicwow</i>
 
 
+[View this bot on discordbots.org](https://discordbots.org/bot/507317733382160424)
 
-
-Powered by [discord.js](https://discord.js.org/#/)
+Powered by [Discord.js](https://discord.js.org/#/) && Deployed with [Zeit.co](https://zeit.co/)
