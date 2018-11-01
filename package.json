@@ -1,0 +1,12 @@
+{
+  "name": "moldy-bot",
+  "version": "1.0.0",
+  "description": "A bot for all videogame knowledge. (Uses Giant Bomb API)",
+  "main": "bot.js",
+  "author": "Connor Mulqueen",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "discord.js": "^11.4.2",
+    "winston": "^3.1.0"
+  }
+}
