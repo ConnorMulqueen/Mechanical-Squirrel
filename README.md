@@ -8,7 +8,7 @@ A Discord bot that posts World of Warcraft: Classic memes.
 ![asdf](https://i.imgur.com/1TXOBxi.gif)
 
 <b>How to use:</b> 
-  * Add the bot to your server using this link [add link here]
+  * Add the bot to your server using [this link](https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072) 
   * Type '<b>#nochanges</b>' in any text channel the bot is in, it will respond with a meme pulled from <i>www.reddit.com/r/classicwow</i>
 
 
