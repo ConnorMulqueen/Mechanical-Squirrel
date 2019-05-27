@@ -14,4 +14,13 @@ A Discord bot that posts World of Warcraft: Classic memes.
 
 [View this bot on discordbots.org](https://discordbots.org/bot/507317733382160424)
 
-Powered by [Discord.js](https://discord.js.org/#/) && Deployed with [Zeit.co](https://zeit.co/)
+Powered by [Discord.js](https://discord.js.org/#/) && Deployed with AWS
+
+## Setup Local Environment
+
+```
+git clone https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes.git
+cd DiscordBot-ClassicWoWMemes
+npm install discord.js
+node bot.js
+```
