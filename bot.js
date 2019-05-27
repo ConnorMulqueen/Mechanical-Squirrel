@@ -9,8 +9,8 @@ client.on('ready', () => {
 client.login('');
 
 client.on('message', message => {
-
-  if(message.content === '#nochanges') {
+  message.content = message.content.toLowerCase();
+  if(message.content === '#nochanges' || message.content === '#vanillawowmeme' || message.content === '#classicwowmeme') {
     getRandomLine('imageLinks.csv', function(returnValue){
       message.channel.send(returnValue);
       return;
