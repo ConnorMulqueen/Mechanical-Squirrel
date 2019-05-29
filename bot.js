@@ -6,7 +6,6 @@ const client = new Discord.Client();
 dailyMemeCount = 0
 client.on('ready', () => {
     console.log('Ready!');
-    client.channels.forEach
 });
 
 client.login('');
@@ -17,10 +16,8 @@ client.on('message', message => {
 
     /* Send meme to channel */
     case '#nochanges':
-    case '#vanillawowmeme':
-    case '#classicwowmeme':
+    case '#meme':
       dailyMemeCount+=1
-      console.log()
       getRandomLine('imageLinks.csv', function(returnValue){
         message.channel.send(returnValue);
         return;
@@ -36,7 +33,6 @@ client.on('message', message => {
     case '#info':
       message.channel.send(getBotInfo());
       break;
-
   }
 });
 
@@ -62,11 +58,20 @@ function getRandomLine(filename,callback){
 }
 
 function getBotInfo() {
-  return 'DiscordBot page for me can be found here https://discordbots.org/bot/507317733382160424. Made opensource by @ConnorMulqueen on GitHub with ❤️ https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes'
+  return 'DiscordBot page for me can be found - https://discordbots.org/bot/507317733382160424 \n Made open source by @ConnorMulqueen on GitHub with ❤️ - https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes'
+}
+
+/* Write to the stats.csv file in the format
+   DATE, Meme Count, Server count*/
+function writeToStatsCsv() {
+  fs.appendFile('stats.csv', new Date().toString() +','+ dailyMemeCount.toString() +','+ client.guilds.size + '\n', (err) => {
+    if(err) throw err;
+  });
 }
 
 /* Message me at 8 o'clock everyday telling me how many memes have been requested */
 schedule.scheduleJob({hour: 20, minute: 00}, function(){
+  writeToStatsCsv();
   client.channels.get('').send('@Moldy#2075 This bot has been asked for a meme ' + dailyMemeCount + ' times today.')
   dailyMemeCount = 0;
 })
