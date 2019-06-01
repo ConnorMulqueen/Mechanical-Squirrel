@@ -27,4 +27,4 @@ cd Mechanical-Squirrel
 npm install
 node bot.js
 ```
-Powered by [Discord.js](https://discord.js.org/#/) && Deployed with AWS EC2
+Powered by [Discord.js](https://discord.js.org/#/) && Hosted with AWS EC2
