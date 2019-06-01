@@ -20,7 +20,7 @@ A Discord bot that posts World of Warcraft: Classic memes.
 Submit requests for new features [here!](https://github.com/ConnorMulqueen/Mechanical-Squirrel/issues)
 
 ## Setup Local Environment
-
+Modify the *credentials.js* file to have your personal api tokens!
 ```
 git clone https://github.com/ConnorMulqueen/Mechanical-Squirrel.git
 cd Mechanical-Squirrel
