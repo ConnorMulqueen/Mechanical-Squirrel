@@ -3,11 +3,17 @@ const client = new Discord.Client();
 const credentials = require('./credentials.js');
 const fs = require('fs');
 const schedule = require('node-schedule');
+const DBL = require("dblapi.js");
+const dbl = new DBL(credentials.discordbots_api_token, client);
 
 var dailyMemeCount = 0;
+
 client.on('ready', () => {
     console.log('Ready!');
     client.user.setActivity('Type \'#help\' for info');
+
+    //Post stats to discordbots.org api
+    dbl.postStats(client.guilds.size, null, null);
 });
 
 client.login(credentials.bot_token);
@@ -108,6 +114,7 @@ function writeToStatsCsv() {
   */
 schedule.scheduleJob({hour: 20, minute: 00}, function(){
   writeToStatsCsv();
+  dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
   client.channels.get(credentials.my_private_channel_id).send('<@'+credentials.my_private_user_id+ '> This bot has been asked for a meme ' + dailyMemeCount + ' times today.');
   dailyMemeCount = 0;
 })
