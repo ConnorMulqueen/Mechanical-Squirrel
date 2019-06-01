@@ -84,7 +84,7 @@ function getRandomLine(filename,callback){
 function getBotHelp() {
   return `
   \`\`\`css
-  # World of Warcraft: Classic Memes
+  # Mechanical Squirrel (World of Warcraft: Classic Memes)
   ## COMMANDS
   --------
   #nochanges or #meme : Sends back a wow classic meme from /r/classicwow
