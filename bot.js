@@ -1,14 +1,16 @@
 const Discord = require('discord.js');
-var fs = require('fs');
-var schedule = require('node-schedule');
 const client = new Discord.Client();
+const credentials = require('./credentials.js');
+const fs = require('fs');
+const schedule = require('node-schedule');
 
-dailyMemeCount = 0
+var dailyMemeCount = 0;
 client.on('ready', () => {
     console.log('Ready!');
+    client.user.setActivity('Type \'#help\' for info');
 });
 
-client.login('');
+client.login(credentials.bot_token);
 
 client.on('message', message => {
   message.content = message.content.toLowerCase();
@@ -30,12 +32,17 @@ client.on('message', message => {
       break;
 
     /* Send bot info to channel */
-    case '#info':
-      message.channel.send(getBotInfo());
+    case '#help':
+      message.channel.send(getBotHelp());
       break;
   }
 });
 
+/**
+  * Gets bot statistics (amount of servers added to, and total users)
+  * @path - '#stats'
+  * @return {String}
+  */
 function getBotStats() {
   totalMembers = 0;
   client.guilds.forEach(function (guild) {
@@ -46,32 +53,61 @@ function getBotStats() {
   return 'Bot is currently deployed to ' + client.guilds.size + ' servers! Totaling ~' + totalMembers + ' Users!';
 }
 
+/**
+  * Grabs random line from imageLinks.csv to
+  * display a meme
+  * @path - '#nochanges or #meme'
+  * @return {String}
+  */
 function getRandomLine(filename,callback){
   fs.readFile(filename, function(err, data){
     if(err) throw err;
     data = data + ''; //converting to string because 'data' is a Location object
-    var lines = data.split('\n');
+    let lines = data.split('\n');
 
     randomLine = lines[Math.floor(Math.random()*lines.length)];
     callback(randomLine);
  });
 }
 
-function getBotInfo() {
-  return 'DiscordBot page for me can be found - https://discordbots.org/bot/507317733382160424 \n Made open source by @ConnorMulqueen on GitHub with ❤️ - https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes'
+/**
+  * Returns Bot Information String
+  * @path - '#help'
+  * @return {String}
+  */
+function getBotHelp() {
+  return `
+  \`\`\`css
+  # World of Warcraft: Classic Memes
+  ## COMMANDS
+  --------
+  #nochanges or #meme : Sends back a wow classic meme from /r/classicwow
+  #stats : Gives bot statistics
+  #help : Gives bot information
+
+  ## INFORMATION
+  --------
+  DiscordBots page for me can be found - https://discordbots.org/bot/507317733382160424
+  Made open source on GitHub with ❤️ - https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes
+  Request new features here - https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes/issues
+  Donations appreciated! - https://donatebot.io/checkout/582638321378000897\`\`\``
 }
 
-/* Write to the stats.csv file in the format
-   DATE, Meme Count, Server count*/
+/**
+  * Write to the stats.csv file in the format
+  * 'DATE, Meme Count, Server count'
+  */
 function writeToStatsCsv() {
   fs.appendFile('stats.csv', new Date().toString() +','+ dailyMemeCount.toString() +','+ client.guilds.size + '\n', (err) => {
     if(err) throw err;
   });
 }
 
-/* Message me at 8 o'clock everyday telling me how many memes have been requested */
+/**
+  * Message me at 8PM everyday with a dailyMemeCount
+  */
 schedule.scheduleJob({hour: 20, minute: 00}, function(){
   writeToStatsCsv();
-  client.channels.get('').send('@Moldy#2075 This bot has been asked for a meme ' + dailyMemeCount + ' times today.')
+  client.channels.get(credentials.my_private_channel_id).send('<@'+credentials.my_private_user_id+ '> This bot has been asked for a meme ' + dailyMemeCount + ' times today.');
   dailyMemeCount = 0;
 })
