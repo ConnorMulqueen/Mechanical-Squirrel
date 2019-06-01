@@ -1,9 +1,8 @@
 # Discord Bot - Classic WoW Memes
-[![Discord Bots](https://discordbots.org/api/widget/507317733382160424.svg)](https://discordbots.org/bot/507317733382160424)
+[![Discord Bots](https://discordbots.org/api/widget/status/507317733382160424.svg)](https://discordbots.org/bot/507317733382160424)[![Discord Bots](https://discordbots.org/api/widget/upvotes/507317733382160424.svg?noavatar=true)][![Discord Bots](https://discordbots.org/api/widget/lib/507317733382160424.svg?noavatar=true)](https://discordbots.org/bot/507317733382160424)
+[![Discord Bots](https://discordbots.org/api/widget/owner/507317733382160424.svg?noavatar=true)](https://discordbots.org/bot/507317733382160424)
 
 [View this bot on discordbots.org](https://discordbots.org/bot/507317733382160424)
-
-
 
 ## Summary
 A Discord bot that posts World of Warcraft: Classic memes.
@@ -17,12 +16,15 @@ A Discord bot that posts World of Warcraft: Classic memes.
   * Type '<b>#nochanges</b>' or '<b>#meme</b>' in any text channel the bot is in, it will respond with a meme pulled from <i>www.reddit.com/r/classicwow</i>
   * Type '<b>#stats</b>' to find out bot statistics (How many servers it's deployed to, with how many users)
   * Type '<b>#info</b>' to learn more about the bot.
+  
+## Submit Issues/Feature Requests
+Submit requests for new features [here!](https://github.com/ConnorMulqueen/Mechanical-Squirrel/issues)
 
 ## Setup Local Environment
 
 ```
-git clone https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes.git
-cd DiscordBot-ClassicWoWMemes
+git clone https://github.com/ConnorMulqueen/Mechanical-Squirrel.git
+cd Mechanical-Squirrel
 npm install
 node bot.js
 ```
