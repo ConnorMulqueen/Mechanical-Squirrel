@@ -1,4 +1,4 @@
-# Discord Bot - Classic WoW Memes
+# Mechanical Squirrel
 [![Discord Bots](https://discordbots.org/api/widget/status/507317733382160424.svg)](https://discordbots.org/bot/507317733382160424) [![Discord Bots](https://discordbots.org/api/widget/upvotes/507317733382160424.svg?noavatar=true)](https://discordbots.org/bot/507317733382160424) [![Discord Bots](https://discordbots.org/api/widget/lib/507317733382160424.svg?noavatar=true)](https://discordbots.org/bot/507317733382160424) [![Discord Bots](https://discordbots.org/api/widget/owner/507317733382160424.svg?noavatar=true)](https://discordbots.org/bot/507317733382160424)
 
 [View this bot on discordbots.org](https://discordbots.org/bot/507317733382160424)
