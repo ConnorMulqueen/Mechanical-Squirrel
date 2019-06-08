@@ -21,23 +21,29 @@ html, body, app-root, .app-frame {
 mat-card-image {
   .avatar_image {
     border-radius: 50%;
-    width: 200px;
+    width: 15%;
   }
 }
 .mat-card-bot {
   margin: 0 auto;
-  max-width: 300px;
-  margin-top: 250px;
+  max-width: 15%;
+  margin-top: 15%;
   text-align:center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .left_side {
   left: 50%;
 }
+
 i {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 video {
     position: fixed;
     top: 50%;
