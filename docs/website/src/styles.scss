@@ -1,0 +1,59 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100% !important;
+}
+html, body, app-root, .app-frame {
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    color: #e0e0e0;
+}
+mat-card-image {
+  .avatar_image {
+    border-radius: 50%;
+    width: 200px;
+  }
+}
+.mat-card-bot {
+  margin: 0 auto;
+  max-width: 300px;
+  margin-top: 250px;
+  text-align:center;
+}
+
+.left_side {
+  left: 50%;
+}
+i {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    mute: true;
+}
+.fa:hover {
+    color: #6002ee;
+}
