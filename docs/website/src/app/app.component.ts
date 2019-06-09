@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
     this.titleService.setTitle('Mechanical Squirrel');
   }
   ngOnInit() {
-    if(window.screen.width <= 360) {
+    if(window.screen.width <= 500) {
       this.mobile = true;
     }
   }

@@ -1,16 +1,16 @@
 <body>
+
     <video muted loop oncanplay="this.play()" onloadedmetadata="this.muted=true">
       <source src="./assets/crossroads.mp4" type="video/mp4">
     </video>
-    <mat-toolbar class="fixed-header">
-      <span>Mechanical Squirrel</span>
+
+    <mat-toolbar *ngIf="!mobile" class="fixed-header">
       <!-- This fills the remaining space of the current row -->
       <span class="fill-remaining-space"></span>
-
-
-      <a button mat-raised-button *ngIf="!mobile" href="https://donatebot.io/checkout/582638321378000897" target="_blank"><i class="fa fa-paypal fa"></i>Donate</a>
+      <a button mat-raised-button href="https://donatebot.io/checkout/582638321378000897" style="margin-right: 10px;" target="_blank"><i class="fa fa-paypal fa"></i>Donate</a>
       <a button mat-raised-button color="primary" href="https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072" target="_blank">Add to Discord Server</a>
     </mat-toolbar>
+
     <mat-card class="mat-card-bot">
       <img mat-card-image src="./assets/mechanical_squirrel.png" class="avatar_image">
       <mat-card-title>Mechanical Squirrel</mat-card-title>
@@ -25,5 +25,6 @@
         <a button mat-raised-button color="primary" href="https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072" target="_blank">Add to Discord Server</a>
       </mat-card-actions>
     </mat-card>
+
   </body>
 <router-outlet></router-outlet>
