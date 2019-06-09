@@ -13,6 +13,14 @@
     position: absolute;
     background-color:transparent;
 }
+.fixed-footer {
+  position:fixed;
+  text-align: center;
+  bottom:0;
+  position: absolute;
+  width: 100% !important;
+  background-color:transparent;
+}
 html, body, app-root, .app-frame {
     overflow: hidden;
     margin: 0;
@@ -28,11 +36,6 @@ html, body, app-root, .app-frame {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
-
-
-.left_side {
-  left: 50%;
 }
 
 i {
