@@ -1,4 +1,4 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 .fill-remaining-space {
   /* This fills the remaining space, by using flexbox.
      Every toolbar row uses a flexbox row layout. */
@@ -10,6 +10,8 @@
     left: 0;
     z-index: 2;
     width: 100% !important;
+    position: absolute;
+    background-color:transparent;
 }
 html, body, app-root, .app-frame {
     overflow: hidden;
@@ -17,12 +19,6 @@ html, body, app-root, .app-frame {
     height: 100%;
     box-sizing: border-box;
     color: #e0e0e0;
-}
-mat-card-image {
-  .avatar_image {
-    border-radius: 50%;
-    width: 15%;
-  }
 }
 .mat-card-bot {
   margin: 0 auto;

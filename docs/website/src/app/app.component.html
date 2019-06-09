@@ -1,27 +1,26 @@
 <body>
-    <video autoplay muted loop oncanplay="this.muted=true">
+    <video muted loop oncanplay="this.play()" onloadedmetadata="this.muted=true">
       <source src="./assets/crossroads.mp4" type="video/mp4">
     </video>
-    <mat-toolbar color="primary" class="fixed-header">
+    <mat-toolbar class="fixed-header">
       <span>Mechanical Squirrel</span>
       <!-- This fills the remaining space of the current row -->
       <span class="fill-remaining-space"></span>
 
-      <a button mat-button href="https://donatebot.io/checkout/582638321378000897" target="_blank">Donate</a>
-      <a button mat-raised-button href="https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072" target="_blank">Add to Discord Server</a>
+      <a button mat-raised-button href="https://donatebot.io/checkout/582638321378000897" target="_blank"><i class="fa fa-paypal fa"></i>Donate</a>
+      <a button mat-raised-button color="primary" href="https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072" target="_blank">Add to Discord Server</a>
     </mat-toolbar>
     <mat-card class="mat-card-bot">
       <img mat-card-image src="./assets/mechanical_squirrel.png" class="avatar_image">
       <mat-card-title>Mechanical Squirrel</mat-card-title>
-      <mat-card-subtitle>Added to 190 servers reaching 13,085 users.</mat-card-subtitle>
+      <mat-card-subtitle>190 servers | 13,085 users</mat-card-subtitle>
       <mat-card-content>
         A Discord bot for World of Warcraft: Classic memes. <br>
-        <a href="https://github.com/ConnorMulqueen/Mechanical-Squirrel" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-        <a href="https://github.com/ConnorMulqueen/Mechanical-Squirrel/issues" target="_blank"><i class="fa fa-bug fa-3x"></i></a>
-        <a href="https://discordbots.org/bot/507317733382160424" target="_blank"><i class="fa fa-chevron-circle-up fa-3x"></i></a>
       </mat-card-content>
       <mat-card-actions>
-        <a button mat-raised-button href="https://donatebot.io/checkout/582638321378000897" target="_blank">Donate</a>
+        <a button mat-button href="https://github.com/ConnorMulqueen/Mechanical-Squirrel" target="_blank"><i class="fa fa-github fa-2x"></i>GitHub</a>
+        <a button mat-button href="https://donatebot.io/checkout/582638321378000897" target="_blank"><i class="fa fa-paypal fa-2x"></i>Donate</a>
+        <a button mat-button href="https://discordbots.org/bot/507317733382160424" target="_blank">View on DiscordBots</a>
         <a button mat-raised-button color="primary" href="https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072" target="_blank">Add to Discord Server</a>
       </mat-card-actions>
     </mat-card>
