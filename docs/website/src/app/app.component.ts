@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -6,8 +6,14 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  mobile: boolean = false;
   public constructor(private titleService: Title ) {
     this.titleService.setTitle('Mechanical Squirrel');
+  }
+  ngOnInit() {
+    if(window.screen.width <= 360) {
+      this.mobile = true;
+    }
   }
 }

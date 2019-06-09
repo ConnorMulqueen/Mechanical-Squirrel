@@ -7,13 +7,14 @@
       <!-- This fills the remaining space of the current row -->
       <span class="fill-remaining-space"></span>
 
-      <a button mat-raised-button href="https://donatebot.io/checkout/582638321378000897" target="_blank"><i class="fa fa-paypal fa"></i>Donate</a>
+
+      <a button mat-raised-button *ngIf="!mobile" href="https://donatebot.io/checkout/582638321378000897" target="_blank"><i class="fa fa-paypal fa"></i>Donate</a>
       <a button mat-raised-button color="primary" href="https://discordapp.com/oauth2/authorize?client_id=507317733382160424&scope=bot&permissions=3072" target="_blank">Add to Discord Server</a>
     </mat-toolbar>
     <mat-card class="mat-card-bot">
       <img mat-card-image src="./assets/mechanical_squirrel.png" class="avatar_image">
       <mat-card-title>Mechanical Squirrel</mat-card-title>
-      <mat-card-subtitle>190 servers | 13,085 users</mat-card-subtitle>
+      <mat-card-subtitle>193 servers | 13,251 users</mat-card-subtitle>
       <mat-card-content>
         A Discord bot for World of Warcraft: Classic memes. <br>
       </mat-card-content>
