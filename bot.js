@@ -16,6 +16,11 @@ client.on('ready', () => {
     dbl.postStats(client.guilds.size, null, null);
 });
 
+//joined a server
+client.on('guildCreate', guild => {
+    messageMe('Joined a new guild: ' + guild.name);
+})
+
 client.login(credentials.bot_token);
 
 client.on('message', message => {
@@ -111,7 +116,7 @@ function writeToStatsCsv() {
   * Message me at 8PM everyday with a dailyMemeCount
   */
 schedule.scheduleJob({hour: 20, minute: 00}, function(){
-  client.channels.get(credentials.my_private_channel_id).send('<@'+credentials.my_private_user_id+ '> This bot has been asked for a meme ' + dailyMemeCount + ' times today.');
+  messageMe( 'This bot has been asked for a meme ' + dailyMemeCount + ' times today.');
   writeToStatsCsv();
   dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
   dailyMemeCount = 0;
@@ -125,3 +130,11 @@ schedule.scheduleJob({hour: 16, minute: 30, dayOfWeek: 0}, function() {
   var spawn = require("child_process").spawn;
   var process = spawn('python',["./reddit-scraper.py"] );
 });
+
+/**
+  * Send me a message
+  * @param {string} message
+  */
+function messageMe(message) {
+  client.channels.get(credentials.my_private_channel_id).send('<@'+credentials.my_private_user_id+'> '+ message);
+}
