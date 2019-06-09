@@ -1,3 +1,4 @@
+//Discord
 const bot_token = '';
 const discordbots_api_token = '';
 const my_private_channel_id = '';

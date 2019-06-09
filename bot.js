@@ -93,10 +93,8 @@ function getBotHelp() {
 
   ## INFORMATION
   --------
-  DiscordBots page for me can be found - https://discordbots.org/bot/507317733382160424
-  Made open source on GitHub with ❤️ - https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes
-  Request new features here - https://github.com/ConnorMulqueen/DiscordBot-ClassicWoWMemes/issues
-  Donations appreciated! - https://donatebot.io/checkout/582638321378000897\`\`\``
+  More Information can be found on project website  - https://www.connormulqueen.com/Mechanical-Squirrel
+  Donations appreciated!\`\`\``
 }
 
 /**
@@ -113,8 +111,17 @@ function writeToStatsCsv() {
   * Message me at 8PM everyday with a dailyMemeCount
   */
 schedule.scheduleJob({hour: 20, minute: 00}, function(){
+  client.channels.get(credentials.my_private_channel_id).send('<@'+credentials.my_private_user_id+ '> This bot has been asked for a meme ' + dailyMemeCount + ' times today.');
   writeToStatsCsv();
   dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
-  client.channels.get(credentials.my_private_channel_id).send('<@'+credentials.my_private_user_id+ '> This bot has been asked for a meme ' + dailyMemeCount + ' times today.');
   dailyMemeCount = 0;
-})
+});
+
+
+/**
+  * Scrape reddit for memes every Sunday at 4:30
+  */
+schedule.scheduleJob({hour: 16, minute: 30, dayOfWeek: 0}, function() {
+  var spawn = require("child_process").spawn;
+  var process = spawn('python',["./reddit-scraper.py"] );
+});
