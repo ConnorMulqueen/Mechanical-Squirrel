@@ -8,7 +8,7 @@ reddit = praw.Reddit(client_id='',
 print('Composing .csv file...');
 
 subreddit = reddit.subreddit('classicwow');
-with open('imageLinks.csv','w') as csvFile:
+with open('imageLinks.csv','a') as csvFile:
     fieldnames = ['title', 'url']
     for post in reddit.subreddit('classicwow').top('week', limit=None):
         if (post.score > 20 and 'imgur.com' in post.url
